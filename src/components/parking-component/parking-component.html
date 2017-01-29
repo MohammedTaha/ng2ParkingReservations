@@ -1,0 +1,21 @@
+<!--
+  Generated template for the ParkingComponent component.
+
+  See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
+  for more info on Angular 2 Components.
+-->
+
+<ion-card class = 'parking' (click) = 'selectParking(parking)'>
+  <div class="parking-image">
+    <ion-icon name="pin"></ion-icon>
+  </div>
+  <hr/>
+  <ion-card-content>
+    <ion-card-title>
+      {{parking.Name}}
+      </ion-card-title>
+    <p>
+      {{parking.Desc}}
+    </p>
+  </ion-card-content>
+</ion-card>

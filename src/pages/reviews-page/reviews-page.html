@@ -1,0 +1,64 @@
+<!--
+  Generated template for the ReviewsPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <ion-navbar primary>
+    <button ion-button outline menuToggle> <ion-icon name="menu"></ion-icon> </button>
+    <ion-title>
+      Feed Back
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button color="primary" *ngIf = 'loggedInUserType == "Normal User"' (click)="openNewFeedBackForm()"><ion-icon name="paper"></ion-icon> &nbsp; Feed Back </button>
+      <button ion-button color="danger" (click)="logoutUser()"><ion-icon name="log-out"></ion-icon> &nbsp; Logout </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <div [hidden]="!isNewFeedBackViewVisible">
+    <form #feedBackForm='ngForm' (submit)='sumbitFeedback($event, feedBackForm)'>
+      <ion-list inset>
+
+        <ion-item>
+          <ion-label>Please enter Desc.</ion-label>
+          <ion-input type="text" ngModel name='Desc'></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <button class="rightFloatedElem rightButtons" ion-button color="primary" large><ion-icon name="send"></ion-icon> &nbsp; Post </button>
+        </ion-item>
+
+      </ion-list>
+    </form>
+  </div>
+
+
+
+  <ion-list>
+    <ion-item  class="centerAlignedText" *ngFor = 'let item of list | async'>
+      <div class="leftSection">
+        <h2 *ngIf = 'loggedInUserType !== "Normal User"'>Review by {{item.UserName}}</h2>
+        <h3 class="review-description">{{item.Desc}}</h3>
+        <div class="admin-review-container" *ngIf= "item.Reply && item.Reply.Desc" >
+            <hr>
+            <div class="admin-review">
+             Reply : {{item.Reply.Desc}}
+            </div>
+        </div>
+      </div>
+      <div class="rightSection" *ngIf = 'loggedInUserType !== "Normal User" && (!item.Reply || !item.Reply.Desc)'>
+        <button class="rightFloatedElem rightButtons" ion-button color="primary" large (click) = "getAdminReview(item.$key)"><ion-icon name="undo"></ion-icon> &nbsp; Reply </button>
+      </div>
+
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>

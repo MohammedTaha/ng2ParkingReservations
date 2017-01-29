@@ -1,0 +1,114 @@
+<ion-content class = 'darkShadedBackground'>
+  <form [hidden] = 'activeView == "SignUpView"' id="signInForm" #signInForm = 'ngForm' (submit)="doSignIn(signInForm.value)">
+
+    <ion-card class = 'lightShadedBackground'>
+      <ion-card-content>
+        <div class="list centerAlignedText">
+          <h2>Sign In Please..!</h2>
+        </div>
+
+        <ion-list>
+
+          <ion-item class = 'lightShadedBackground'>
+            <ion-label fixed>Email</ion-label>
+            <ion-input type="email" ngModel name = 'email' required></ion-input>
+          </ion-item>
+
+          <ion-item class = 'lightShadedBackground'>
+            <ion-label fixed>Password</ion-label>
+            <ion-input type="password" ngModel name = 'password' required></ion-input> 
+          </ion-item>
+
+        </ion-list>
+
+
+
+        <div class="centerAlignedText customRow">
+          <button type="submit" ion-button> <ion-icon name="log-in"></ion-icon> &nbsp; Sign In </button>
+        </div>
+        <br>
+        <br>
+
+        <div class="customRow-light" >
+          <button type="button" ion-button item-left icon-left outline (click) = 'showSignUp()'> <ion-icon name="person-add"></ion-icon> Register yourself</button>
+          <!--<span class="rightFloatedElem"> Or Signup using 
+            <button type="button" ion-button icon-left outline> <ion-icon name="logo-facebook"></ion-icon> Facebook </button>
+            <button type="button" ion-button icon-left outline> <ion-icon name="logo-googleplus"></ion-icon> Google </button>
+          </span> -->
+        </div>
+      </ion-card-content>
+
+    </ion-card>
+  </form>
+
+
+
+
+  <form [hidden] = 'activeView == "SignInView"' id="signUpForm" #signUpForm = 'ngForm' (submit)="doSignUp(signUpForm.value)">
+
+    <ion-card class = 'lightShadedBackground'>
+      <ion-card-content>
+        <div class="list centerAlignedText">
+          <h2>Sign Up Please..!</h2>
+        </div>
+
+        <ion-list>
+
+          <ion-item class = 'lightShadedBackground'>
+            <ion-label fixed>First Name</ion-label>
+            <ion-input type="text" ngModel name = 'FirstName' required></ion-input>
+          </ion-item>
+
+          <ion-item class = 'lightShadedBackground'>
+            <ion-label fixed>Last Name</ion-label>
+            <ion-input type="text" ngModel name = 'LastName'></ion-input>
+          </ion-item>
+
+          <ion-item class = 'lightShadedBackground'>
+            <ion-label fixed>Age</ion-label>
+            <ion-input type="number" ngModel name = 'Age' required></ion-input>
+          </ion-item>
+
+          <ion-item class = 'lightShadedBackground'>
+            <ion-label fixed>Gender</ion-label>
+            <ion-select name = "Gender" ngModel required>
+              <ion-option value="" selected disabled>Select One</ion-option>
+              <ion-option value="Male">Male</ion-option>
+              <ion-option value="Female">Female</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item class = 'lightShadedBackground'>
+            <ion-label fixed>Email</ion-label>
+            <ion-input type="email" ngModel name = 'Email' required></ion-input>
+          </ion-item>
+
+          <ion-item class = 'lightShadedBackground'>
+            <ion-label fixed>Password</ion-label>
+            <ion-input type="password" ngModel name = 'Password' required></ion-input>
+          </ion-item>
+
+          <ion-item class = 'lightShadedBackground'>
+            <ion-label fixed>Reconfirm Password</ion-label>
+            <ion-input type="password" ngModel name = 'ReconfirmedPassword' required></ion-input>
+          </ion-item>
+
+
+        </ion-list>
+
+
+
+        <div class="centerAlignedText customRow">
+          <button type="submit" ion-button> <ion-icon name="person-add"></ion-icon> &nbsp; Sign Up </button>
+        </div>
+        <br>
+        <br>
+
+        <div class="customRow-light rightAlignedText" >
+          <button type="button" ion-button item-left icon-left outline (click) = 'showSignIn()'> <ion-icon name="log-in"></ion-icon> Already have an account ?</button>
+        </div>
+      </ion-card-content>
+
+    </ion-card>
+  </form>
+</ion-content>

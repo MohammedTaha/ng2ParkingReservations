@@ -1,0 +1,50 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+.leftAlignedText {
+  text-align: left;
+}
+.rightAlignedText {
+  text-align: right;
+}
+.centerAlignedText {
+  text-align: center;
+}
+.leftFloatedElem {
+  float: left;
+}
+.rightFloatedElem {
+  float: right;
+}
+.inlineBlockElem{
+    display: inline-block;
+}
+#signUpForm, #signInForm{
+  min-width: 45em;
+  width: 60%;
+  margin: 1em auto;
+}
+
+.lightShadedBackground {
+    // background-color: color($colors, background);
+}
+.darkShadedBackground {
+    // background-color: color($colors, background_dark);
+    // background: -webkit-linear-gradient(top, lighten(color($colors, background_dark), 20%) 0%,color($colors, background_dark) 100%);
+    // background: linear-gradient(to bottom, lighten(color($colors, background_dark), 20%) 0%, color($colors, background_dark) 100%);        
+}

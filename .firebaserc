@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "ng2bookaslot",
+    "staging": "ng2parkingreservations"
+  }
+}

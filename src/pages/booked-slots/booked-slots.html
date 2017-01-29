@@ -1,0 +1,37 @@
+<!--
+  Generated template for the BookedSlots page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <ion-navbar primary>
+    <button ion-button outline menuToggle> <ion-icon name="menu"></ion-icon> </button>
+    <ion-title>
+      View Bookings
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button color="danger" (click)="logoutUser()"><ion-icon name="log-out"></ion-icon> &nbsp; Logout </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+
+  <!--{{itemToPrint | json}}-->
+  <ion-list>
+    <ion-item *ngFor = 'let item of list | async'>
+      
+      <span class="rightFloatedElem rightButtons" >
+        <button *ngIf = 'loggedInUserType == "Normal User"' ion-button color="secondary" (click) = "printThisBooking(item)" large>Print</button>
+        <button ion-button color="danger" (click) = "cancelThisBooking(item.$key)" large>Cancel Booking</button>
+      </span>
+
+      <h2>{{item.AreaName}} - {{item.SlotName}}</h2>
+      <p>Booked by {{ item.UserName }} From <b>{{getDate(item.BookingStartDT)}}</b> to <b>{{getDate(item.BookingEndDT)}}</b> </p>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,30 @@
+page-reviews-page {
+
+}
+ion-item{  
+    background: lightgray;
+    margin-bottom: 10px;
+}
+.admin-review{
+    background: #69717d;
+    color: white;
+    padding: 0.4em;
+    border-radius: 0.25em;
+    white-space: normal;
+}
+.rightButtons{
+    zoom : 0.65;
+}
+.leftSection{
+    display: inline-block;
+    width: 89%;
+    text-align: left;
+}
+.review-description{
+    white-space: normal;
+}
+.rightSection{
+    display: inline-block;
+    width: 10%;
+    vertical-align: middle;
+}
